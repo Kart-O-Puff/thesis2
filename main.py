@@ -1,7 +1,7 @@
 import numpy as np
+from mido import MidiFile
 from scipy.optimize import linear_sum_assignment
 from sklearn.metrics import roc_auc_score, average_precision_score, roc_curve
-from mido import MidiFile
 import os
 import matplotlib.pyplot as plt
 
@@ -76,8 +76,8 @@ def evaluate_model(y_true, y_scores):
     return auc, map_score, fpr, tpr
 
 # Example Usage
-midi_file1 = "C:/School/Year 4 Sem 2/Thesis 2/Dataset/MTC-ANN-2.0.1/mid/NLB015569_01.mid"  # Replace with your MIDI file path
-midi_file2 = "C:/School/Year 4 Sem 2/Thesis 2/Dataset/MTC-ANN-2.0.1/mid/NLB070033_01.mid"  # Replace with your MIDI file path
+midi_file1 = "C:/Users/Pamela/Documents/Billy/thesis2/dataset/mid/NLB015569_01.mid"  # Replace with your MIDI file path
+midi_file2 = "C:/Users/Pamela/Documents/Billy/thesis2/dataset/mid/NLB070033_01.mid"  # Replace with your MIDI file path
 
 query_song_notes = extract_midi_notes(midi_file1)
 compare_song_notes = extract_midi_notes(midi_file2)
@@ -158,5 +158,5 @@ plt.ylabel('True Positive Rate')
 plt.legend(loc='lower right')
 plt.show()
 
-print(f"AUC: {auc:.4f}")
-print(f"MAP: {map_score:.4f}")
+print(f"Area Under the Curve: {auc:.4f}")
+print(f"Mean Average Precision: {map_score:.4f}")
